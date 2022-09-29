@@ -27,18 +27,17 @@ class ViewController: UIViewController {
         
         resultColorView.layer.cornerRadius = 20
     }
+    
     @IBAction func sliderActionRed() {
-        var flexx = String(sliderRed.value)
-        flexx = String(format: "%.2f", flexx)
-        valueSliderRed.text = flexx
+        valueSliderRed.text = String(format: "%.2f", sliderRed.value)
         resultColorView.tintColor = sliderRed.minimumTrackTintColor?.withAlphaComponent(CGFloat(sliderRed.value))
     }
     @IBAction func sliderActionGreen() {
-        valueSliderGreen.text = String(sliderGreen.value)
+        valueSliderGreen.text = String(format: "%.2f", sliderGreen.value)
         resultColorView.tintColor = sliderGreen.minimumTrackTintColor?.withAlphaComponent(CGFloat(sliderGreen.value))
     }
     @IBAction func sliderActionBlue() {
-        valueSliderBlue.text = String(sliderBlue.value)
+        valueSliderBlue.text = String(format: "%.2f", sliderBlue.value)
         resultColorView.tintColor = sliderBlue.minimumTrackTintColor?.withAlphaComponent(CGFloat(sliderBlue.value))
     }
     
@@ -68,5 +67,10 @@ class ViewController: UIViewController {
         sliderBlue.maximumValue = 1
         sliderBlue.minimumTrackTintColor = .blue
     }
-}
 
+//extension Double {
+//    func round(to places: Int) -> Double {
+//        let divisor = pow(1.0, Double(places))
+//        return (self * divisor).rounded() / divisor
+//    }
+}
